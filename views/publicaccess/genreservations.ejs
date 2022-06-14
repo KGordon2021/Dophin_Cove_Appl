@@ -13,19 +13,11 @@
 </head> 
 <body>
 
-    <!-- <div class="pages">
-        <%- include('../partials/nav.ejs') %>
-    </div> -->
-
     <div class="addProjectsCon2">
-        <div class="imgBx">
-            <img src="" alt="">
-        </div>
-
         <div class="form">
             <form action="/dc_allreqs/make_res/res_send" method="post">
-                <h1>Make New Bookings</h1>
-                <label for="">Program:</label>
+                <h1>Make Reservation</h1>
+                <label for="">Program: </label>
                 <select name="progam_id" id="">
                     <option value="1">Dolphin Swim Adventure</option>
                     <option value="2">Shark Encounter</option>
@@ -37,18 +29,18 @@
                
             <div class="liners">
                     <div>
-                        <label for="">First Name</label>
+                        <label for="">First Name: </label>
                         <input type="text" name="f_name" for="" value="">
                     </div>
                 
                     <div>
-                        <label for="">Last Name</label>
+                        <label for="">Last Name: </label>
                         <input type="text" name="l_name" for="" value="">
                     </div>
              </div>
              <% if (my_session.loggedin == true) { %>
                <div class="toggleopts">
-                   <label for="">Hotel: </label>
+                   <label for="">Hotel From: </label>
                     <input type="text" name="h_from" value="">
                     <input type="hidden" name="b_thru" value="<%= my_session.tc_id%>">
                 </div>
@@ -56,7 +48,7 @@
                
 
                 <div>
-                    <label for="">Number of Persons</label>
+                    <label for="">Number of Persons: </label>
                     <input type="text" name="num_ppl" for="" value="">
                 </div>
 
@@ -68,7 +60,7 @@
                         <input type="hidden" name="req_date" value="<%= new Date().toLocaleDateString('fr-CA')%>">
                     </div>
                     <div class="p_meth">
-                        <label for="">Paymemt Method</label>
+                        <label for="">Paymemt Method: </label>
                         <select name="pay_opts" id="">
                             <option value="1">American Express</option>
                             <option value="2">Visa</option>
@@ -80,10 +72,10 @@
                     </div>
                 </div>
                 <div>
-                    <label for="">Cost</label>
+                    <label for="">Cost: </label>
                     <input type="number" name="cost">
                 </div>
-                <div>
+                <div class="butn">
                     <input type="submit" id="" value="Make Reservations">
                 </div>
                 </form>

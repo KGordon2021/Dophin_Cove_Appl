@@ -8,7 +8,30 @@ router.get('/register', function(req, res, next) {
     res.render('../views/register');
 });
 
-router.post('/user/registration' , async(req, res) => {
+router.get('/register/new_tc', function(req, res, next) {
+  res.render('../views/dolphin_Cove/addUsr', {my_session: req.session});
+});
+
+router.post('/register/new_tc_prof' , (req, res) => {
+  var voucher = Date.now().toString().slice(-5);
+  let data = {    company_id: req.body.c_Id, 
+                  company_name: req.body.c_nm,
+                  company_rate: req.body.c_rt,
+                   };
+
+      let sqlQuery = "INSERT INTO tour_companies_profile SET ?";
+      let vQuery = conn.query(sqlQuery, data,(err, results) => {
+      if(err) {
+          console.log(err);
+      }
+          else {
+              res.redirect('/register');
+          }
+      });
+
+      });
+
+router.post('/register/new_user' , async(req, res) => {
 var value = req.body.pswrd;
 const salt =  await bcrypt.genSalt(12); // the sync alternative const salt = bcrypt.genSaltSync(12) where no await function is used
 value =  await bcrypt.hash(value, salt) // similarly the sync alternative value = bcrypt.hash(value, salt)
@@ -32,5 +55,7 @@ let data = {    user_id: req.body.u_ID,
     }
     });
 }); 
+
+
 
 module.exports = router;

@@ -25,7 +25,7 @@ router.get('/dc_allreqs/edit/:id', function(req, res) { //must be router.get or 
     if(err) {
         res.render('../views/dolphin_cove/editrequests', {editInfo:''});
     } else {
-        res.render('../views/dolphin_cove/editrequests', {editInfo:row});
+        res.render('../views/dolphin_cove/editrequests', {editInfo:row, my_session: req.session});
     }
     });
     
