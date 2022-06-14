@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="public/styles.css"> -->
+    <title>Document</title>
+     <style>
+
+    </style>
+
+</head> 
+<body>
+
+    <div class="pages">
+        <%- include('../partials/nav.ejs') %>
+    </div>
+
+    <div class="addProjectsCon2">
+        <div class="imgBx">
+            <img src="" alt="">
+        </div>
+
+        <div class="form">
+            <form action="/dc_allreqs/make_res/res_send" method="post">
+                <h1>Make New Bookings</h1>
+                <label for="">Program:</label>
+                <select name="progam_id" id="">
+                    <option value="1">Dolphin Swim Adventure</option>
+                    <option value="2">Shark Encounter</option>
+                    <option value="3">Dolphin Encounter</option>
+                    <option value="4">Admission Plus</option>
+                    <option value="5">Dolphin Royal Swin</option>
+                    <option value="6">Yaman Adventures + Swim with the Dolphins</option>
+                </select>
+               
+            <div class="liners">
+                    <div>
+                        <label for="">First Name</label>
+                        <input type="text" name="f_name" for="" value="">
+                    </div>
+                
+                    <div>
+                        <label for="">Last Name</label>
+                        <input type="text" name="l_name" for="" value="">
+                    </div>
+             </div>
+             <% if (my_session.loggedin == true) { %>
+               <div class="toggleopts">
+                   <label for="">Hotel: </label>
+                    <input type="text" name="h_from" value="">
+                    <input type="hidden" name="b_thru" value="<%= my_session.tc_id%>">
+                </div>
+             <% } %>
+               
+
+                <div>
+                    <label for="">Number of Persons</label>
+                    <input type="text" name="num_ppl" for="" value="">
+                </div>
+
+
+                <div class="days">
+                    <div class="dayed">
+                        <label for="">Schedule Date: </label>
+                        <input type="date" name="excur_date" id="">
+                        <input type="hidden" name="req_date" value="<%= new Date().toLocaleDateString('fr-CA')%>">
+                    </div>
+                    <div class="p_meth">
+                        <label for="">Paymemt Method</label>
+                        <select name="pay_opts" id="">
+                            <option value="1">American Express</option>
+                            <option value="2">Visa</option>
+                            <option value="3">Master Card</option>
+                            <option value="4">PayPal</option>
+                            <option value="5">Cash</option>
+                            <option value="6">Pay on Arrival</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <label for="">Cost</label>
+                    <input type="number" name="cost">
+                </div>
+                <div>
+                    <input type="submit" id="" value="Make Reservations">
+                </div>
+                </form>
+        </div>
+    </div>
+
+   
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/styles.css">
+    <title>All Requests</title>
+</head>
+<body>
+
+    <%- include('../partials/nav.ejs') %>
+
+    <div class="welcome">
+        <h1>Welcome Back <%= my_session.first_Nm %> </h1>
+        <hr>
+    </div>
+
+    <div class="progCon">
+        <div class="updates">
+            <h2>Recent Updates</h2>
+            <div class="con">
+                <h2>Today's Foriegn Exchange Rates</h2>
+                <p>Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Sit nesciunt dicta distinctio
+                molestias incidunt laboriosam!</p>
+            </div>
+
+            <div class="con">
+                <h2>SSD Tours Commission Rates</h2>
+                <p>Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Sit nesciunt dicta distinctio
+                molestias incidunt laboriosam!</p>
+            </div>
+
+            <div class="con">
+                <h2>Bookings Contest Winner Annc...</h2>
+                <p>Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Sit nesciunt dicta distinctio
+                molestias incidunt laboriosam!</p>
+            </div>
+            <div>
+                <button>View All Recent Updates</button>
+            </div>
+        </div>
+
+      
+                  
+        <div class="box">
+            <div class="headline">
+                <h2>All Reservations</h2>
+            </div>
+           
+             <% if(data.length) {
+                for(var i = 0; i < data.length; i++) { 
+             %>
+             <div class="innerBx">
+                <input type="hidden" name="id" value="<%= data[i].id %>">
+                <input type="hidden" name="progid" value="<%= data[i].program_id %>">
+                
+                <div class="applname">
+                    <h2><%= data[i].primaryguest_fname %> <%= data[i].primaryguest_lname %> <span> <%= data[i].voucher_no %> </span></h2>
+                </div>
+                <div class="txt">
+                    <p>From <%= data[i].hotel_from %> and booked through <%= data[i].company_name %> </p>
+                    <p> Program Applied for <%= data[i].names %></p>
+
+                    <div class="schedprice">
+                        <p>Application Date: <%= data[i].date_of_request %></p>
+                        <p>Date of Excursion: <%= data[i].date_of_excursion %></p>
+                    </div>
+
+                    <div class="btns">
+                        <div class="cst">
+                            <p>$ <%= data[i].program_cost %> USD</p>
+                        </div>
+                        <div class="action">
+                        <a href="/dc_allreqs/edit/<%= data[i].id %>"> Update Reservation</a>    
+                        <a href="/dc_allreqs/delete/<%= data[i].id %>">Delete Reservation</a>  
+                        </div>  
+                    </div>
+                </div>  
+                </div>                         
+                
+           <% } %>
+    
+       <% } %>
+       <div class="">
+            <a href="/dc_allreqs/make_res">Add Booking</a>
+        </div>
+        </div>
+</div>
+</body>
+</html>

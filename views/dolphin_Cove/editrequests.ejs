@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+      /*global styles for pages*/
+.pages {
+    width: 80%;
+    border: 2px solid rgb(255, 51, 212, 0.2);
+    margin-top: 10px;
+    margin-left: 150px;
+    border-radius: 5px;
+    z-index: 999;
+
+}
+
+.pages nav {
+  display: flex;
+  background-color: rgb(212, 51, 212, 0.2);
+  width: 100%;
+  padding: 10px 20px;
+}
+
+.pages nav a {
+    /* border: 1px solid #fff; */
+    text-decoration: none;
+    padding: 5px 8px;
+    border-left: 2px solid rgb(255, 51, 212, 0.2);
+    margin-right: 5px;
+    transition: all ease-in-out 0.8s;
+    cursor: pointer;
+}
+
+.pages nav a:hover {
+    background: #fff;
+    border-left: 2px solid rgb(255, 51, 212, 0.8);
+    border-radius: 2px;
+
+}
+
+.pages nav .last {
+    margin-left: auto;
+}  
+
+
+.addProjectsCon2 {
+    display: flex;
+    margin: 80px 100px 0px 100px;
+    /* border: 2px solid red; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* justify-content: space-evenly; */
+    /* width: 100%; */
+}
+
+
+.addProjectsCon2 .imgBx {
+    width: 50%;
+    height: 100%;
+    /* border: 2px solid red; */
+
+}
+
+.addProjectsCon2 .imgBx img{
+    width: 100%;
+    height: 100%;
+
+}
+
+.addProjectsCon2 .form {
+    width: 50%;
+    /* border: 2px solid red; */
+    /* padding-left: 50px; */
+
+}
+
+.addProjectsCon2 .form form {
+    border: 10px solid rgba(79, 5, 63, 0.8);
+    width: 450px;
+    text-align: center;
+    padding: 20px;
+    margin-top: 2px;
+    /* height: 100%; */
+    
+}
+
+.addProjectsCon2 .form form h1 {
+    font-size: 50px ;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.addProjectsCon2 .form form label{
+    padding: 20px 0px;
+    font-size: 18px;
+    /* color: red */
+}
+
+.addProjectsCon2 .form form input{
+    margin: 15px 0px;
+    border: 1px solid silver ;
+    border-bottom: 3px solid rgba(79, 5, 63, 0.8);
+    padding: 5px 8px;
+}
+
+.addProjectsCon2 .form form input[type='text'] {
+    width: 240px;
+    word-wrap: break-word;
+
+}
+
+.addProjectsCon2 .form form input[type='submit'] {
+    border: none;
+    outline: none;
+    background: rgba(79, 5, 63, 0.8);
+    width: 150px;
+    color: white;
+    padding: 5px 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all ease-in-out 0.8s;
+}
+
+.addProjectsCon2 .form form input[type='submit']:hover {
+    background: rgb(79, 5, 63);
+}
+    </style> -->
+</head>
+<body>
+    <div class="pages">
+        <%- include('../partials/nav.ejs') %>
+    </div>
+
+    <div class="addProjectsCon2">
+        <!-- <div class="imgBx">
+            <img src="https://i1.wp.com/palaemonsystems.com/wp-content/uploads/2021/07/Project-Management.png?fit=582%2C379&ssl=1" alt="">
+        </div> -->
+        <div class="form">
+
+            
+        <div class="form">
+            <form action="/dc_allreqs/edit/dc_res" method="post">
+                <h1><%= editInfo[0].names%></h1>
+                <input type="hidden" name="progam_id" value="<%= editInfo[0].id%>">
+            <div class="liners">
+                    <div>
+                        <label for="">First Name</label>
+                        <input type="text" name="f_name" for="" value="<%= editInfo[0].primaryguest_fname%>">
+                    </div>
+                
+                    <div>
+                        <label for="">Last Name</label>
+                        <input type="text" name="l_name" for="" value="<%= editInfo[0].primaryguest_lname%>">
+                    </div>
+             </div>
+
+                <div class="toggleopts">
+                    <input type="hidden" name="h_from" value="<%= editInfo[0].hotel_from%>">
+                    <input type="hidden" name="b_thru" value="<%= editInfo[0].booked_through%>">
+                </div>
+
+                <div>
+                    <label for="">Number of Persons</label>
+                    <input type="text" name="num_ppl" for="" value="<%= editInfo[0].number_of_guest%>">
+                </div>
+
+
+                <div class="days">
+                    <div class="dayed">
+                        <label for="">Arrival Date: </label>
+                        <input type="date" name="excur_date" id="">
+                        <label for="">Date Updated</label>
+                        <input type="date" name="req_date" value="<%= new Date().toLocaleDateString('fr-CA')%>">
+                    </div>
+                    <div class="p_meth">
+                        <label for="">Paymemt Method</label>
+                        <select name="pay_opts" id="">
+                            <option value="1">American Express</option>
+                            <option value="2">Visa</option>
+                            <option value="3">Master Card</option>
+                            <option value="4">PayPal</option>
+                            <option value="5">Cash</option>
+                            <option value="6">Pay on Arrival</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <p>Price $ <%= editInfo[0].program_cost %> USD </p>
+                    <input type="hidden" name="cost" value="<%=editInfo[0].cost %>">
+                </div>
+                <div>
+                    <input type="submit" id="" value="Update Reservations">
+                </div>
+                </form>
+        </div>
+        </div>
+    </div>
+
+    
+
+</body>
+</html>

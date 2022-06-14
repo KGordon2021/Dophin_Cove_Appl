@@ -1,0 +1,18 @@
+<div class="navigate">
+    <nav>
+        <div>
+        <a href="/dc_allreqs">All Bookings</a>
+        <a href="">All Affliate Tours</a>
+        </div>
+        <% if ( my_session.loggedin == true && my_session.tc_id == 1001 ) { %>
+         <div class="left">
+             <a href="register">Register Tour Company</a>
+             <a href="">Register New User</a>
+         </div>
+        <% } %>
+
+        <% if (my_session.loggedin == true) { %>
+            <a href="logout">Logout</a>
+     <% } %>
+    </nav>
+</div>

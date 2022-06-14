@@ -1,0 +1,187 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+        
+.navigate {
+    width: 100%;
+    border-bottom: 5px solid rgb(0, 84, 84);
+    z-index: 999;
+    top: 0;
+    position: fixed;
+    margin-left: -8px;
+}
+
+.navigate nav {
+  display: flex;
+  align-items: center;
+  background-color: teal;
+  height: 50px;
+  padding: 0px 50px;
+}
+
+.navigate nav a {
+    /* border: 1px solid #fff; */
+    text-decoration: none;
+    padding: 5px 8px;
+    border-left: 4px solid teal;
+    margin-right: 5px;
+    color: #fff;
+    transition: all ease-in-out 0.8s;
+    cursor: pointer;
+}
+
+.navigate nav a:hover {
+    background: #fff;
+    color: teal;
+    border-left: 2px solid rgb(0, 142, 167);
+    border-radius: 2px;
+
+}
+
+.navigate nav .left {
+    margin-left: auto;
+}
+
+
+/*login styles*/
+.login{
+    width: 100%;
+    height: 100vh;
+    padding-top: 5%;
+    /* border: 2px solid orange; */
+}
+
+.register{
+    padding-top: 1%;
+    /* border: 2px solid orange; */
+}
+
+.login form {
+    border: 10px solid rgb(0, 142, 167);
+    width: 400px;
+    /* margin-top: 2%; */
+    margin-left: 38%;
+    text-align: center;
+    padding: 50px 0px;
+}
+
+.login form .profile {
+    width: 50%;
+    height: 20%;
+    text-align: center;
+    border-radius: 50%;
+    border: 5px solid rgb(0, 142, 167);
+    margin-left: 100px;
+}
+
+.login form .profile img{
+    width: 100%;
+    height: 100%;
+}
+
+.login form h1 {
+    font-size: 50px;
+    font-weight: 500;
+    padding-bottom: 15px;
+
+}
+
+.login form .name {
+    /* font-size: 20px; */
+    margin: 15px 0px;
+}
+
+.login form .name label {
+    font-size: 20px;
+}
+
+.login form input {
+    padding: 3px 8px;
+    /* border-radius: 5px; */
+    outline: none;
+    border: none;
+    border-bottom: 4px solid rgb(0, 142, 167);
+    margin-top: 10px;
+}
+
+.login form .submit {
+    width: 100%;
+}
+
+.login form .submit input[type="submit"] {
+    width: 130px;
+    border:none;
+    background: rgb(0, 142, 167);
+    padding: 5px 8px;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.login form .sml_dets {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 8%;
+}
+
+.login form .sml_dets a {
+    text-decoration: none;
+    color: darkblue;
+    cursor: pointer;
+}
+
+.welcome {
+    margin-top: 100px;
+    width: 100%;
+    /* border-bottom: 5px solid green; */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.welcome h1 {
+    font-weight: 450;
+    font-size: 50px;
+    padding-bottom: 10px;
+}
+.welcome hr {
+    width: 600px;
+    background: rgb(0, 84, 84);
+    border: 3px solid rgb(0, 84, 84);
+}
+
+.progCon {
+    border: 12px solid yellow;
+    margin-top: 50px;
+    display: flex;
+}
+
+.progCon .updates {
+    width: 30%;
+    padding: 0px 50px 30px;
+}
+
+.progCon .box {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.progCon .box .cont {
+    border: 2px solid red;
+    display: flex;
+}
+
+.progCon .box .innerBx {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid red;
+}
+

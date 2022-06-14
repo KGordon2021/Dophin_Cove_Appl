@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="public/styles.css"> -->
+    <title>Document</title>
+     <style>
+
+    </style>
+
+</head> 
+<body>
+
+    <div class="pages">
+        <%- include('../partials/nav.ejs') %>
+    </div>
+
+    <div class="addProjectsCon2">
+        <div class="imgBx">
+            <img src="<%= resInfo[0].cover %>" alt="">
+        </div>
+
+        <div class="form">
+            <form action="/all_progams/make_res/pub_res" method="post">
+                <h1><%= resInfo[0].names%></h1>
+                <input type="hidden" name="progam_id" value="<%= resInfo[0].id%>">
+            <div class="liners">
+                    <div>
+                        <label for="">First Name</label>
+                        <input type="text" name="f_name" for="" value="">
+                    </div>
+                
+                    <div>
+                        <label for="">Last Name</label>
+                        <input type="text" name="l_name" for="" value="">
+                    </div>
+             </div>
+
+                <div class="toggleopts">
+                    <input type="hidden" name="h_from" value="nowhere hotel">
+                    <input type="hidden" name="b_thru" value="1001">
+                </div>
+
+                <div>
+                    <label for="">Number of Persons</label>
+                    <input type="text" name="num_ppl" for="" value="">
+                </div>
+
+
+                <div class="days">
+                    <div class="dayed">
+                        <label for="">Schedule Date: </label>
+                        <input type="date" name="excur_date" id="">
+                        <input type="hidden" name="req_date" value="<%= new Date().toLocaleDateString('fr-CA')%>">
+                    </div>
+                    <div class="p_meth">
+                        <label for="">Paymemt Method</label>
+                        <select name="pay_opts" id="">
+                            <option value="1">American Express</option>
+                            <option value="2">Visa</option>
+                            <option value="3">Master Card</option>
+                            <option value="4">PayPal</option>
+                            <option value="5">Cash</option>
+                            <option value="6">Pay on Arrival</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <p>Price $ <%= resInfo[0].cost %> USD </p>
+                    <input type="hidden" name="cost" value="<%=resInfo[0].cost %>">
+                </div>
+                <div>
+                    <input type="submit" id="" value="Make Reservations">
+                </div>
+                </form>
+        </div>
+    </div>
+
+   
+</body>
+</html>
