@@ -62,8 +62,8 @@
                     <h2><%= data[i].primaryguest_fname %> <%= data[i].primaryguest_lname %> <span> <%= data[i].voucher_no %> </span></h2>
                 </div>
                 <div class="txt">
-                    <p>From <%= data[i].hotel_from %> and booked through <%= data[i].company_name %> </p>
-                    <p> Program Applied for <%= data[i].names %></p>
+                    <p>From : <%= data[i].hotel_from %> and booked through <%= data[i].company_name %> </p>
+                    <p> Program Applied for : <%= data[i].names %></p>
 
                     <div class="schedprice">
                         <p>Application Date: <%= data[i].date_of_request %></p>
@@ -72,7 +72,7 @@
 
                     <div class="btns">
                         <div class="cst">
-                            <p>$ <%= data[i].program_cost %> USD</p>
+                            <p> Cost: $ <%= data[i].program_cost %> USD</p>
                         </div>
                         <div class="action">
                         <a href="/dc_allreqs/edit/<%= data[i].id %>"> Update Reservation</a>    
@@ -89,6 +89,10 @@
             <a href="/dc_allreqs/make_res">Add Booking</a>
         </div>
         </div>
+</div>
+
+<div class="cont">
+    <%- include('../publicaccess/genreservations.ejs') %>
 </div>
 </body>
 </html>
