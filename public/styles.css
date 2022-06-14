@@ -54,12 +54,12 @@
 }
 
 .register{
-    padding-top: 1%;
+    padding-top: 5%;
     /* border: 2px solid orange; */
 }
 
 .login form {
-    border: 10px solid rgb(0, 142, 167);
+    border: 10px solid teal;
     width: 400px;
     /* margin-top: 2%; */
     margin-left: 38%;
@@ -72,7 +72,7 @@
     height: 20%;
     text-align: center;
     border-radius: 50%;
-    border: 5px solid rgb(0, 142, 167);
+    border: 5px solid teal;
     margin-left: 100px;
 }
 
@@ -102,7 +102,7 @@
     /* border-radius: 5px; */
     outline: none;
     border: none;
-    border-bottom: 4px solid rgb(0, 142, 167);
+    border-bottom: 4px solid teal;
     margin-top: 10px;
 }
 
@@ -113,7 +113,7 @@
 .login form .submit input[type="submit"] {
     width: 130px;
     border:none;
-    background: rgb(0, 142, 167);
+    background: teal;
     padding: 5px 8px;
     color: white;
     border-radius: 20px;
@@ -197,6 +197,12 @@
     width: 55%;
     display: flex;
     flex-direction: column;
+}
+
+.progCon .box2 {
+    width: 70%;
+    display: flex;
+    /* flex-direction: column; */
 }
 
 .progCon .box .headline {
@@ -284,4 +290,77 @@
     border: none;
     cursor: pointer;
 }
+/* 
 
+.addProjectsCon2 {
+    display: flex;
+    margin: 80px 100px 0px 100px;
+}
+
+
+.addProjectsCon2 .imgBx {
+    width: 50%;
+    height: 100%;
+
+}
+
+.addProjectsCon2 .imgBx img{
+    width: 100%;
+    height: 100%;
+
+}
+
+.addProjectsCon2 .form {
+    width: 50%;
+  }
+
+.addProjectsCon2 .form form {
+    border: 10px solid rgba(79, 5, 63, 0.8);
+    width: 450px;
+    text-align: center;
+    padding: 20px;
+    margin-top: 2px;
+    
+}
+
+.addProjectsCon2 .form form h1 {
+    font-size: 50px ;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.addProjectsCon2 .form form label{
+    padding: 20px 0px;
+    font-size: 18px;
+}
+
+.addProjectsCon2 .form form input{
+    margin: 15px 0px;
+    border: 1px solid silver ;
+    border-bottom: 3px solid rgba(79, 5, 63, 0.8);
+    padding: 5px 8px;
+}
+
+.addProjectsCon2 .form form input[type='text'] {
+    width: 240px;
+    word-wrap: break-word;
+
+}
+
+.addProjectsCon2 .form form input[type='submit'] {
+    border: none;
+    outline: none;
+    background: rgba(79, 5, 63, 0.8);
+    width: 150px;
+    color: white;
+    padding: 5px 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all ease-in-out 0.8s;
+}
+
+.addProjectsCon2 .form form input[type='submit']:hover {
+    background: rgb(79, 5, 63);
+}
+
+ */

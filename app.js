@@ -25,11 +25,8 @@ var registerRouter = require('./routes/register');
 var loginRouter = require('./routes/login');
 var allprogramsRouter = require('./routes/allprograms');
 var dc_crudRouter = require('./routes/dc_crud');
-// var addNewOrientRouter = require('./routes/addNewOrient');
-// var addNewInternRouter = require('./routes/addNewIntern');
-// var addNewGroupRouter = require('./routes/addNewGroup');
-// var allInternsRouter = require('./routes/allInterns');
-// var allGroupsRouter = require('./routes/allgroups');
+var affiliates_crudRouter = require('./routes/affiliates_crud');
+
 
 
 var app = express();
@@ -66,11 +63,8 @@ app.use(registerRouter); // these don't work the same way that sir own works I w
  app.use(loginRouter);
  app.use(allprogramsRouter);
  app.use(dc_crudRouter);
-//  app.use(addNewOrientRouter);
-//  app.use(addNewInternRouter);
-//  app.use(addNewGroupRouter);
-//  app.use(allInternsRouter);
-//  app.use(allGroupsRouter );
+ app.use(affiliates_crudRouter);
+
 
  app.listen(port, () => console.log(`Listening on port ${port}..`));
 

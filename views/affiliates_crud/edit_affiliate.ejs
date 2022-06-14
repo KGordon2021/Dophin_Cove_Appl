@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../public/styles.css">
+    <title>Edit Affiliates</title>
+</head>
+<body>
+        <%- include('../partials/nav.ejs') %>
+
+
+    <div class="addProjectsCon2">
+        <div class="form">
+            <form action="/affiliates_allrecs/update" method="post">
+                <h1><%= editInfo[0].company_name%></h1>
+                <input type="hidden" name="id" value="<%= editInfo[0].id%>">
+                    <div>
+                        <label for="">Company Name</label>
+                        <input type="text" name="c_name" for="" value="<%= editInfo[0].company_name%>">
+                    </div>
+                
+                    <div>
+                        <label for="">Company Rate</label>
+                        <input type="text" name="c_rt" for="" value="<%= editInfo[0].company_rate%>">
+                    </div>
+                 <div>
+                    <label for="">Company_Id</label>
+                    <input type="number" name="c_id" value="<%=editInfo[0].company_id %>">
+                </div>
+                <div>
+                    <input type="submit" value="Update Affiliate Records">
+                </div>
+                </form>
+        </div>
+      
+    </div>
+
+    
+
+</body>
+</html>

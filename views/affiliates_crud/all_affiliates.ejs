@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../public/styles.css">
-    <title>All Requests</title>
+    <title>All Tour Companies</title>
 </head>
 <body>
 
@@ -17,8 +17,9 @@
     </div>
 
     <div class="progCon">
+                   
         <div class="updates">
-            <h2 class="hdl">Recent Updates</h2>
+            <h2 class="hdl">Upcoming Events</h2>
             <div class="con">
                 <h2>Today's Foriegn Exchange Rates</h2>
                 <p>Lorem ipsum dolor sit amet consectetur
@@ -44,11 +45,10 @@
             </div>
         </div>
 
-      
-                  
-        <div class="box">
+
+        <div class="box box2">
             <div class="headline">
-                <h2>All Reservations</h2>
+                <h2>View All Affiliates</h2>
             </div>
            
              <% if(data.length) {
@@ -56,27 +56,19 @@
              %>
              <div class="innerBx">
                 <input type="hidden" name="id" value="<%= data[i].id %>">
-                <input type="hidden" name="progid" value="<%= data[i].program_id %>">
+                <input type="hidden" name="progid" value="<%= data[i].company_id %>">
                 
                 <div class="applname">
-                    <h2><%= data[i].primaryguest_fname %> <%= data[i].primaryguest_lname %> <span> <%= data[i].voucher_no %> </span></h2>
+                    <h2><%= data[i].company_name%> <%= data[i].primaryguest_lname %> <span> <%= data[i].voucher_no %> </span></h2>
                 </div>
                 <div class="txt">
-                    <p>From : <%= data[i].hotel_from %> and booked through <%= data[i].company_name %> </p>
-                    <p> Program Applied for : <%= data[i].names %></p>
-
-                    <div class="schedprice">
-                        <p>Application Date: <%= data[i].date_of_request %></p>
-                        <p>Date of Excursion: <%= data[i].date_of_excursion %></p>
-                    </div>
-
                     <div class="btns">
                         <div class="cst">
-                            <p> Cost: $ <%= data[i].program_cost %> USD</p>
+                            Company Rate per person: <%= data[i].company_rate %> and booked through <%= data[i].company_name %> 
                         </div>
                         <div class="action">
-                        <a href="/dc_allreqs/edit/<%= data[i].id %>"> Edit Reservation</a>    
-                        <a href="/dc_allreqs/delete/<%= data[i].id %>">Delete Reservation</a>  
+                        <a href="/affiliates_allrecs/edit/<%= data[i].id %>"> Edit</a>    
+                        <a href="/affiliates_allrecs/delete/<%= data[i].id %>">Remove</a>  
                         </div>  
                     </div>
                 </div>  
@@ -86,10 +78,6 @@
     
        <% } %>
         </div>
-</div>
-
-<div class="cont">
-    <%- include('../publicaccess/genreservations.ejs') %>
 </div>
 </body>
 </html>

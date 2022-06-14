@@ -5,11 +5,11 @@ var bcrypt = require('bcrypt');
 
 //renders longin view
 router.get('/register', function(req, res, next) {
-    res.render('../views/register');
+    res.render('../views/register', {my_session: req.session});
 });
 
 router.get('/register/new_tc', function(req, res, next) {
-  res.render('../views/dolphin_Cove/addUsr', {my_session: req.session});
+  res.render('../views/affiliates_crud/add_affiliate', {my_session: req.session});
 });
 
 router.post('/register/new_tc_prof' , (req, res) => {
@@ -25,7 +25,7 @@ router.post('/register/new_tc_prof' , (req, res) => {
           console.log(err);
       }
           else {
-              res.redirect('/register');
+              res.redirect('/login');
           }
       });
 

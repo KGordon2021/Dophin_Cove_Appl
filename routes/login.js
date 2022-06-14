@@ -5,7 +5,7 @@ var bcrypt = require('bcrypt')
 
 //renders longin view
 router.get('/login', function(req, res, next) {
-    res.render('../views/login',);
+    res.render('../views/login', {my_session: req.session});
 });
 
 //authenticates user 
