@@ -12,16 +12,11 @@
         <%- include('../partials/nav.ejs') %>
     </div>
 
-    <div class="">
-        <!-- <div class="imgBx">
-            <img src="https://i1.wp.com/palaemonsystems.com/wp-content/uploads/2021/07/Project-Management.png?fit=582%2C379&ssl=1" alt="">
-        </div> -->
-        <div class="form">
-
-            
-        <div class="form">
+    <div class="main_Con">
+        <h1>Edit Reservations</h1>
+        <div class="edit_form">
             <form action="/dc_allreqs/edit/dc_res" method="post">
-                <h1><%= editInfo[0].names%></h1>
+                <h2><%= editInfo[0].names%></h2>
                 <input type="hidden" name="progam_id" value="<%= editInfo[0].id%>">
             <div class="liners">
                     <div>
@@ -49,7 +44,7 @@
                 <div class="days">
                     <div class="dayed">
                         <label for="">Arrival Date: </label>
-                        <input type="date" name="excur_date" id="">
+                        <input type="date" name="excur_date" id=""> <br>
                         <label for="">Date Updated</label>
                         <input type="date" name="req_date" value="<%= new Date().toLocaleDateString('fr-CA')%>">
                     </div>
@@ -59,7 +54,7 @@
                             <option value="1">American Express</option>
                             <option value="2">Visa</option>
                             <option value="3">Master Card</option>
-                            <option value="4">PayPal</option>
+                            <option value="4">PayPal</option>~
                             <option value="5">Cash</option>
                             <option value="6">Pay on Arrival</option>
                         </select>
@@ -73,7 +68,6 @@
                     <input type="submit" id="" value="Update Reservations">
                 </div>
                 </form>
-        </div>
         </div>
     </div>
 

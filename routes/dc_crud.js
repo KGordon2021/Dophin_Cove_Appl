@@ -6,6 +6,16 @@ var conn = require('../lib/dbConnections');
 
 router.get('/dc_allreqs', function(req, res, next) { //route has to be declared once
     if(req.session.loggedin == true) {
+        if(req.session.tc_id == 1001) {
+            conn.query("SELECT b.*, tc.company_name, po.names, pm.methods FROM island_tours_app.bookings b, island_tours_app.tour_companies_profile tc, island_tours_app.programs_offered po, island_tours_app.payment_methods pm WHERE b.program_applied = po.id AND b.payment_method = pm.id Group by b.voucher_no", function(err, rows){
+               if(err){
+                   console.log(err)  
+               }else{
+                   res.render('../views/dolphin_cove/allrequest', 
+                   {data: rows, my_session: req.session});
+               }                      
+                });  
+        } else if(req.session.tc_id != 1001) {
     conn.query("SELECT b.*, tc.company_name, po.names, pm.methods FROM island_tours_app.bookings b, island_tours_app.tour_companies_profile tc, island_tours_app.programs_offered po, island_tours_app.payment_methods pm WHERE b.program_applied = po.id AND b.payment_method = pm.id AND b.booked_through = " + req.session.tc_id +
         " Group by b.voucher_no", function(err, rows){
            if(err){
@@ -15,13 +25,14 @@ router.get('/dc_allreqs', function(req, res, next) { //route has to be declared 
                {data: rows, my_session: req.session});
            }                      
             });
+        }
         } else {
             res.redirect('/login')
         }
        });
 
 router.get('/dc_allreqs/edit/:id', function(req, res) { //must be router.get or app.get or whatever else i choose but it has to be a get http verb
-    conn.query("SELECT * FROM bookings WHERE id =" + req.params.id, function(err,row){
+    conn.query("SELECT b.*, po.names FROM bookings b, programs_offered po WHERE b.program_applied = po.id AND b.id =" + req.params.id, function(err,row){
     if(err) {
         res.render('../views/dolphin_cove/editrequests', {editInfo:''});
     } else {

@@ -45,6 +45,153 @@
 }
 
 
+/*home*/
+
+.navigate2 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.navigate2 .logoCon {
+    width: 100%;
+    display: flex;
+    border: 2px solid red;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 100px;
+}
+
+.navigate2 .logoCon .socials{
+    display: flex;
+}
+
+.navigate2 .logoCon .cartcon{
+    display: flex;
+    flex-direction: column;
+}
+
+.navigate2 .logoCon .cartcon .top{
+    display: flex;
+    width: 350px;
+    justify-content: space-between;
+    /* border: 2px solid green; */
+}
+
+.navigate2 .logoCon .cartcon .top p {
+    font-size: 16px;
+    font-weight: bold;
+    color: darkblue;
+}
+
+.navigate2 .logoCon .cartcon .top .cart svg{
+    width: 20px;
+    height: 20px;
+    fill: darkblue;
+}
+.navigate2 .logoCon .socials svg {
+    width: 40px;
+    height: 40px;
+    fill: lightgrey;
+}
+
+.navigate2 .logoCon .cartcon .bottom select svg {
+    width: 20px;
+    height: 20px;
+}
+
+.navigate2 .logoCon .cartcon .bottom select{
+    padding: 5px 0px;
+    width: 250px;
+}
+
+.navigate2 .linksonHover {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 80px;
+    background-color: teal;
+    padding: 20px;
+}
+
+.navigate2 .linksonHover select {
+    width: 200px;
+    padding: 8px 0px;
+}
+
+.navigate2 .linksonHover .con {
+    display: flex;
+    border: 2px solid orange;
+}
+
+.navigate2 .linksonHover .con .dropdown {
+    display: none;
+}
+
+.navigate2 .linksonHover .con:hover .dropdown {
+    width: 200px;
+    display: block;
+    position: absolute;
+    background-color: #fff;
+}
+
+.navigate2 .linksonHover .con:hover .dropdown p {
+    padding: 10px 0px;
+}
+
+.navigate2 .smallBanner {
+    width: 100%;
+    padding: 5px;
+    background: #095F65;
+    text-align: center;
+    color: white;
+}
+.navigate2 .smallBanner span img{
+    width:15px;
+    height: 15px;
+}
+
+.landing {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.landing .bigbanner {
+    width: 100%;
+}
+
+.landing .bigbanner img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.landing .txt {
+    width: 100%;
+    position: relative;
+    background: darkblue;
+    color: #fff;
+    text-align: center;
+    padding: 30px 0px;
+}
+
+.landing .txt h2 {
+    font-size: 50px;
+    font-weight: 500;
+}
+
+.landing .txt p {
+    font-size: 25px;
+    font-weight: 500;
+    font-style: oblique;
+}
+/* .navigate2 .smallBanner span {
+    width: 5px;
+    height: 5px;
+} */
+
+
 /*login styles*/
 .login{
     width: 100%;
@@ -290,32 +437,32 @@
     border: none;
     cursor: pointer;
 }
-/* 
 
-.addProjectsCon2 {
-    display: flex;
-    margin: 80px 100px 0px 100px;
-}
-
-
-.addProjectsCon2 .imgBx {
-    width: 50%;
-    height: 100%;
-
-}
-
-.addProjectsCon2 .imgBx img{
+.main_Con {
     width: 100%;
-    height: 100%;
+} 
 
+.main_Con h1 {
+    width: 100%;
+    margin-top: 100px;
+    font-size: 50px;
+    font-weight: 500;
+    text-align: center;
+    padding-bottom: 20px;
 }
 
-.addProjectsCon2 .form {
-    width: 50%;
+.main_Con .edit_form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* margin: 150px 0px 0px 250px; */
+    justify-content: center;
+    align-items: center;
+    /* margin: 0px 0px 0px 400px; */
   }
 
-.addProjectsCon2 .form form {
-    border: 10px solid rgba(79, 5, 63, 0.8);
+.main_Con .edit_form form {
+    border: 10px solid rgb(0, 142, 167);
     width: 450px;
     text-align: center;
     padding: 20px;
@@ -323,44 +470,44 @@
     
 }
 
-.addProjectsCon2 .form form h1 {
-    font-size: 50px ;
+.main_Con .edit_form form h2 {
+    font-size: 40px ;
     font-weight: 500;
     margin-bottom: 20px;
 }
 
-.addProjectsCon2 .form form label{
+.main_Con .edit_form form label{
     padding: 20px 0px;
     font-size: 18px;
 }
 
-.addProjectsCon2 .form form input{
+.main_Con .edit_form form input{
     margin: 15px 0px;
-    border: 1px solid silver ;
-    border-bottom: 3px solid rgba(79, 5, 63, 0.8);
+    border: none ;
+    border-bottom: 3px solid rgb(0, 84, 84);
     padding: 5px 8px;
 }
 
-.addProjectsCon2 .form form input[type='text'] {
+.main_Con .edit_form form input[type='text'] {
     width: 240px;
     word-wrap: break-word;
 
 }
 
-.addProjectsCon2 .form form input[type='submit'] {
+.main_Con .edit_form form input[type='submit'] {
     border: none;
     outline: none;
-    background: rgba(79, 5, 63, 0.8);
-    width: 150px;
+    background: rgb(0, 142, 167);
+    width: 200px;
     color: white;
-    padding: 5px 8px;
+    padding: 10px;
     border-radius: 5px;
     cursor: pointer;
     transition: all ease-in-out 0.8s;
 }
 
-.addProjectsCon2 .form form input[type='submit']:hover {
-    background: rgb(79, 5, 63);
+.main_Con .edit_form form input[type='submit']:hover {
+    background: rgb(0, 84, 84);
 }
 
- */
+
