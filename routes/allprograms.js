@@ -21,7 +21,7 @@ router.get('/all_programs', function(req, res, next) { //route has to be declare
         if(err) {
             res.render('../views/publicaccess/makereservation', {resInfo:''});
         } else {
-            res.render('../views/publicaccess/makereservation', {resInfo:row});
+            res.render('../views/publicaccess/makereservation', {resInfo:row, my_session: req.session});
         }
         });
        

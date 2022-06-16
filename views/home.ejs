@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../public/styles.css">
-    <title>Document</title>
+    <title>Dolphin Cove Reservations</title>
 </head>
 <body>
     <div class="navigate2">
@@ -17,7 +17,7 @@
                 <div class="icon"><a href=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M186.8 202.1l95.2 54.1-95.2 54.1V202.1zM448 80v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48zm-42 176.3s0-59.6-7.6-88.2c-4.2-15.8-16.5-28.2-32.2-32.4C337.9 128 224 128 224 128s-113.9 0-142.2 7.7c-15.7 4.2-28 16.6-32.2 32.4-7.6 28.5-7.6 88.2-7.6 88.2s0 59.6 7.6 88.2c4.2 15.8 16.5 27.7 32.2 31.9C110.1 384 224 384 224 384s113.9 0 142.2-7.7c15.7-4.2 28-16.1 32.2-31.9 7.6-28.5 7.6-88.1 7.6-88.1z"/></svg></a></div>
             </div>
             <div class="logo">
-                <img src="https://www.dolphincoveja.com/Content/src/logo.png" alt="">
+                <a href="/"> <img src="https://www.dolphincoveja.com/Content/src/logo.png" alt=""></a>
             </div>
             <div class="cartcon">
                 <div class="top">
@@ -44,9 +44,11 @@
                         <option value="">Parks</option>
                     </select>
                     <div class="dropdown">
-                        <p>Dophin Cove</p>
-                        <p>Dophin Cove</p>
-                        <p>Dophin Cove</p>
+                        <p>Dophin Cove Ocho Rios</p>
+                        <p>Dophin Cove Montego Bay</p>
+                        <p>Moon Palace</p>
+                        <p>Puerto Seco Beach</p>
+                        <p>Yaaman Adventure</p>
                     </div>
                 </div>
                 
@@ -54,12 +56,11 @@
             <div class="con">
                 <div class="drop">
                     <select name="" id="">
-                        <option value="">Parks</option>
+                        <option value="">Information</option>
                     </select>
                     <div class="dropdown">
-                        <p>Dophin Cove</p>
-                        <p>Dophin Cove</p>
-                        <p>Dophin Cove</p>
+                        <p>Information</p>
+                        <p>Investor Relations</p>
                     </div>
                 </div>
                 
@@ -97,7 +98,7 @@
         <div class="boxs">
             <div class="box">
                 <div class="imgBx">
-                    <img src="" alt="">
+                    <img src="https://www.dolphincoveja.com/Content/src/program-1.jpg" alt="">
                 </div>
                 <div class="text">
                     <h3>A DAy of Fun</h3>
@@ -113,14 +114,14 @@
     
             <div class="box">
                 <div class="imgBx">
-                    <img src="" alt="">
+                    <img src="https://www.dolphincoveja.com/Content/src/program-2.jpg" alt="">
                 </div>
                 <div class="text">
-                    <h3>A DAy of Fun</h3>
-                    <p>They will give you a kiss and allow you to caress them
-                        while standing in knee deep water. This adventure is 
-                        best for those who are not comfortable swimming in the 
-                        sea and the very young.</p>
+                    <h3>SWIM WITH THE DOLPHINS</h3>
+                    <p>At Dolphin Cove, interact with one dolphin while 
+                        swimming in the deep. Enjoy a kiss, try a dance, 
+                        perhaps you will get a splash or two and have a
+                         real up close experience.</p>
                 </div>
                 <div class="btn">
                     <button><a href="">Make Reservation</a></button>
@@ -129,28 +130,38 @@
     
             <div class="box">
                 <div class="imgBx">
-                    <img src="" alt="">
+                    <img src="https://www.dolphincoveja.com/Content/src/program-3.jpg" alt="">
                 </div>
                 <div class="text">
-                    <h3>A DAy of Fun</h3>
-                    <p>They will give you a kiss and allow you to caress them
-                        while standing in knee deep water. This adventure is 
-                        best for those who are not comfortable swimming in the 
-                        sea and the very young.</p>
+                    <h3>FUN TO THE LIMIT!</h3>
+                    <p>TThe most fun and unique program, designed to exceed 
+                        all your expectations.Feel the thrill of foot-push;
+                         The dolphins will rise you above the water surface 
+                         by pushing you from the soles of your feet.</p>
                 </div>
                 <div class="btn">
                     <button><a href="">Make Reservation</a></button>
                 </div>
             </div>
-        </div>
+        </div>  
         
-        <div class="paymentsbanner">
-            <img src="https://www.dolphincoveja.ac/Content/src/cards.png" alt="">
-        </div>
         <div class="allreslink">
             <a href="/all_programs">All Programs</a>
         </div>
+        
+   
     </div>
+
+    <div class="paymentoptions">
+        <h2>Accepted Payment Options</h2>
+        <hr>
+        <div class="imgbx">
+        <img src="https://www.dolphincoveja.com/Content/src/cards.png" alt="">
+        </div>
+    </div>
+    
+    <%- include('../views/partials/footer.ejs') %>
+
 </body>
 </html>
 

@@ -19,17 +19,17 @@ router.post('/register/new_tc_prof' , (req, res) => {
                   company_rate: req.body.c_rt,
                    };
 
-      let sqlQuery = "INSERT INTO tour_companies_profile SET ?";
-      let vQuery = conn.query(sqlQuery, data,(err, results) => {
-      if(err) {
-          console.log(err);
+  let sqlQuery = "INSERT INTO tour_companies_profile SET ?";
+  let vQuery = conn.query(sqlQuery, data,(err, results) => {
+  if(err) {
+      console.log(err);
+  }
+      else {
+          res.redirect('/login');
       }
-          else {
-              res.redirect('/login');
-          }
-      });
+  });
 
-      });
+  });
 
 router.post('/register/new_user' , async(req, res) => {
 var value = req.body.pswrd;

@@ -7,7 +7,7 @@ var conn = require('../lib/dbConnections');
 router.get('/dc_allreqs', function(req, res, next) { //route has to be declared once
     if(req.session.loggedin == true) {
         if(req.session.tc_id == 1001) {
-            conn.query("SELECT b.*, tc.company_name, po.names, pm.methods FROM island_tours_app.bookings b, island_tours_app.tour_companies_profile tc, island_tours_app.programs_offered po, island_tours_app.payment_methods pm WHERE b.program_applied = po.id AND b.payment_method = pm.id Group by b.voucher_no", function(err, rows){
+            conn.query("SELECT b.*, tc.company_name, po.names, pm.methods FROM island_tours_app.bookings b, island_tours_app.tour_companies_profile tc, island_tours_app.programs_offered po, island_tours_app.payment_methods pm WHERE b.program_applied = po.id AND b.payment_method = pm.id AND b.booked_through = tc.company_id Group by b.voucher_no", function(err, rows){
                if(err){
                    console.log(err)  
                }else{

@@ -10,6 +10,9 @@
 <body>
 
     <%- include('../partials/nav.ejs') %>
+    <div class="cont">
+        <%- include('../publicaccess/genreservations.ejs') %>
+    </div>
 
     <div class="welcome">
         <h1>Welcome Back <%= my_session.first_Nm %> </h1>
@@ -44,7 +47,8 @@
             </div>
         </div>
 
-      
+ 
+     
                   
         <div class="box">
             <div class="headline">
@@ -62,8 +66,16 @@
                     <h2><%= data[i].primaryguest_fname %> <%= data[i].primaryguest_lname %> <span> <%= data[i].voucher_no %> </span></h2>
                 </div>
                 <div class="txt">
-                    <p>From : <%= data[i].hotel_from %> and booked through <%= data[i].company_name %> </p>
+                    
+                    <% if (my_session.tc_id == 1001) { %>
+                     <p>From : <%= data[i].hotel_from %> and booked through <%= data[i].company_name %> </p>
                     <p> Program Applied for : <%= data[i].names %></p>
+                    <% } else { %>
+                        <p>From : <%= data[i].hotel_from %> </p>
+                    <p> Program Applied for : <%= data[i].names %></p>
+                <% } %>
+                    
+                  
 
                     <div class="schedprice">
                         <p>Application Date: <%= data[i].date_of_request %></p>
@@ -88,8 +100,7 @@
         </div>
 </div>
 
-<div class="cont">
-    <%- include('../publicaccess/genreservations.ejs') %>
-</div>
+
+
 </body>
 </html>

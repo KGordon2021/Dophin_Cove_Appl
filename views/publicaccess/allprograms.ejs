@@ -8,39 +8,92 @@
     <title>Document</title>
 </head>
 <body>
-    <%- include('../partials/nav.ejs') %>
-
-    <h2>All programs</h2>
-    <div class="progCon">
-                  
-                    <div class="box">
-                         <% if(data.length) {
-                            for(var i = 0; i < data.length; i++) { 
-                         %>
-                            <input type="hidden" name="id" value="<%= data[i].id %>">
-                            <input type="hidden" name="progid" value="<%= data[i].program_id %>">
-                            
-                            <div class="img">
-                                <img src="<%= data[i].cover %>" alt="">
-                            </div>
-                            <div class="txt">
-                                <p><%= data[i].names %></p>
-                                <p><%= data[i].description %></p>
-                            </div>
-
-                            <div class="schedprice">
-                                <p><%= data[i].schedule %></p>
-                                <p>$ <%= data[i].cost %> USD</p>
-                            </div>
-                            
-                            <div class="btn">
-                                <a href="/all_programs/make_res/<%= data[i].id %>">Make Reservation</a>    
-                            </div>
-                            
-                       <% } %>
-                
-                   <% } %>
+    <div class="navigate2">
+        <div class="logoCon">
+            <div class="socials">
+                <div class="icon"><a href=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg></a></div>
+                <div class="icon"><a href=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-48.9 158.8c.2 2.8.2 5.7.2 8.5 0 86.7-66 186.6-186.6 186.6-37.2 0-71.7-10.8-100.7-29.4 5.3.6 10.4.8 15.8.8 30.7 0 58.9-10.4 81.4-28-28.8-.6-53-19.5-61.3-45.5 10.1 1.5 19.2 1.5 29.6-1.2-30-6.1-52.5-32.5-52.5-64.4v-.8c8.7 4.9 18.9 7.9 29.6 8.3a65.447 65.447 0 0 1-29.2-54.6c0-12.2 3.2-23.4 8.9-33.1 32.3 39.8 80.8 65.8 135.2 68.6-9.3-44.5 24-80.6 64-80.6 18.9 0 35.9 7.9 47.9 20.7 14.8-2.8 29-8.3 41.6-15.8-4.9 15.2-15.2 28-28.8 36.1 13.2-1.4 26-5.1 37.8-10.2-8.9 13.1-20.1 24.7-32.9 34z"/></svg></a></div>
+                <div class="icon"><a href=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M224,202.66A53.34,53.34,0,1,0,277.36,256,53.38,53.38,0,0,0,224,202.66Zm124.71-41a54,54,0,0,0-30.41-30.41c-21-8.29-71-6.43-94.3-6.43s-73.25-1.93-94.31,6.43a54,54,0,0,0-30.41,30.41c-8.28,21-6.43,71.05-6.43,94.33S91,329.26,99.32,350.33a54,54,0,0,0,30.41,30.41c21,8.29,71,6.43,94.31,6.43s73.24,1.93,94.3-6.43a54,54,0,0,0,30.41-30.41c8.35-21,6.43-71.05,6.43-94.33S357.1,182.74,348.75,161.67ZM224,338a82,82,0,1,1,82-82A81.9,81.9,0,0,1,224,338Zm85.38-148.3a19.14,19.14,0,1,1,19.13-19.14A19.1,19.1,0,0,1,309.42,189.74ZM400,32H48A48,48,0,0,0,0,80V432a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V80A48,48,0,0,0,400,32ZM382.88,322c-1.29,25.63-7.14,48.34-25.85,67s-41.4,24.63-67,25.85c-26.41,1.49-105.59,1.49-132,0-25.63-1.29-48.26-7.15-67-25.85s-24.63-41.42-25.85-67c-1.49-26.42-1.49-105.61,0-132,1.29-25.63,7.07-48.34,25.85-67s41.47-24.56,67-25.78c26.41-1.49,105.59-1.49,132,0,25.63,1.29,48.33,7.15,67,25.85s24.63,41.42,25.85,67.05C384.37,216.44,384.37,295.56,382.88,322Z"/></svg></a></div>
+                <div class="icon"><a href=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M186.8 202.1l95.2 54.1-95.2 54.1V202.1zM448 80v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48zm-42 176.3s0-59.6-7.6-88.2c-4.2-15.8-16.5-28.2-32.2-32.4C337.9 128 224 128 224 128s-113.9 0-142.2 7.7c-15.7 4.2-28 16.6-32.2 32.4-7.6 28.5-7.6 88.2-7.6 88.2s0 59.6 7.6 88.2c4.2 15.8 16.5 27.7 32.2 31.9C110.1 384 224 384 224 384s113.9 0 142.2-7.7c15.7-4.2 28-16.1 32.2-31.9 7.6-28.5 7.6-88.1 7.6-88.1z"/></svg></a></div>
+            </div>
+            <div class="logo">
+                <a href="/"><img src="https://www.dolphincoveja.com/Content/src/logo.png" alt=""></a>
+            </div>
+            <div class="cartcon">
+                <div class="top">
+                    <p>CONTACT US</p>
+                    <p>INVESTOR RELATIONS</p>
+                    <div class="cart">
+                        <div class="icon">
+                            <a href=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M96 0C107.5 0 117.4 8.19 119.6 19.51L121.1 32H541.8C562.1 32 578.3 52.25 572.6 72.66L518.6 264.7C514.7 278.5 502.1 288 487.8 288H170.7L179.9 336H488C501.3 336 512 346.7 512 360C512 373.3 501.3 384 488 384H159.1C148.5 384 138.6 375.8 136.4 364.5L76.14 48H24C10.75 48 0 37.25 0 24C0 10.75 10.75 0 24 0H96zM128 464C128 437.5 149.5 416 176 416C202.5 416 224 437.5 224 464C224 490.5 202.5 512 176 512C149.5 512 128 490.5 128 464zM512 464C512 490.5 490.5 512 464 512C437.5 512 416 490.5 416 464C416 437.5 437.5 416 464 416C490.5 416 512 437.5 512 464z"/></svg></a>
+                        </div>
                     </div>
+                </div>
+                <div class="bottom">
+                    <select name="" id="">
+                        <option value=""> <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M511.2 387l-23.25 100.8c-3.266 14.25-15.79 24.22-30.46 24.22C205.2 512 0 306.8 0 54.5c0-14.66 9.969-27.2 24.22-30.45l100.8-23.25C139.7-2.602 154.7 5.018 160.8 18.92l46.52 108.5c5.438 12.78 1.77 27.67-8.98 36.45L144.5 207.1c33.98 69.22 90.26 125.5 159.5 159.5l44.08-53.8c8.688-10.78 23.69-14.51 36.47-8.975l108.5 46.51C506.1 357.2 514.6 372.4 511.2 387z"/></svg></span> 1-866-393-5158 </option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    
+        <div class="smallBanner">
+            <p> <span><img src="https://www.dolphincoveja.com/Content/images/Trust_Care.svg" alt=""></span>
+                Dolphin Cares: Integral Hygiene and safety protocols. Read more!</p>
+        </div>
     </div>
+
+    <div class="landing">
+        <div class="bigbanner">
+        <img src="https://www.garrafon.com/Content/images/en/headers/activities.jpg" alt="">
+        </div>
+    </div>
+    
+    <div class="tit">
+      <h2>All <span class="orange">Programs</span> and <span class="pink">Packages</span></h2>  
+    </div>
+    
+    <div class="bigBox">
+        <div class="progCon">
+                        
+                            <% if(data.length) {
+                                for(var i = 0; i < data.length; i++) { 
+                            %>
+                            <div class="box">
+                                <input type="hidden" name="id" value="<%= data[i].id %>">
+                                <input type="hidden" name="progid" value="<%= data[i].program_id %>">
+                                
+                                <div class="imgBx">
+                                    <img src="<%= data[i].cover %>" alt="">
+                                </div>
+                                <div class="info">
+                                <div class="txt">
+                                    <h2><%= data[i].names %></h2>
+                                    <hr>
+                                    <p><%= data[i].description %></p>
+                                </div>
+
+                                <div class="schedprice">
+                                    <p><%= data[i].schedule %></p>
+                                    <p>$ <%= data[i].cost %> USD</p>
+                                </div>
+                                
+                                <div class="btn">
+                                    <a href="read">Read More</a>
+                                    <a href="/all_programs/make_res/<%= data[i].id %>">Make Reservation</a>    
+                                </div>
+
+                                </div>
+                            </div>
+                        <% } %>
+                    
+                    <% } %>
+                        
+        </div>
+
+       </div>
+
+    </div>
+    <%- include('../partials/footer.ejs') %>
 </body>
 </html>
