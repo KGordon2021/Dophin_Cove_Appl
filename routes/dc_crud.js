@@ -32,6 +32,7 @@ router.get('/dc_allreqs', function(req, res, next) { //route has to be declared 
        });
 
 router.get('/dc_allreqs/edit/:id', function(req, res) { //must be router.get or app.get or whatever else i choose but it has to be a get http verb
+    if(req.session.loggedin == true) {
     conn.query("SELECT b.*, po.names FROM bookings b, programs_offered po WHERE b.program_applied = po.id AND b.id =" + req.params.id, function(err,row){
     if(err) {
         res.render('../views/dolphin_cove/editrequests', {editInfo:''});
@@ -39,11 +40,15 @@ router.get('/dc_allreqs/edit/:id', function(req, res) { //must be router.get or 
         res.render('../views/dolphin_cove/editrequests', {editInfo:row, my_session: req.session});
     }
     });
+} else {
+    res.redirect('/login')
+}
     
 });
 
 //Update all dc records
 router.post('/dc_allreqs/edit/dc_res' , (req, res, next) => {
+    if(req.session.loggedin == true) {
 
     let sqlQuery = "UPDATE bookings SET primaryguest_fname ='"+ req.body.f_name + 
     "', primaryguest_lname ='" + req.body.l_name +
@@ -65,33 +70,38 @@ router.post('/dc_allreqs/edit/dc_res' , (req, res, next) => {
             }
             next();
         });
+    } else {
+        res.redirect('/login')
+    }
 
         });
 
 //the delete routes for students
 router.get('/dc_allreqs/delete/:id', (req, res, next) => {
-    // if(req.session.loggedin == true) {
+    if(req.session.loggedin == true) {
     conn.query('DELETE FROM bookings WHERE id =' + req.params.id, function(err, row){
         if(err)  throw err;
             res.redirect('/dc_allreqs');
             next();
         });
-    // }else {
-    //     res.redirect('/login')
-    // }
+    }else {
+        res.redirect('/login')
+    }
     });
 
 router.get('/dc_allreqs/make_res', function(req, res, next) {
-    // if(req.session.loggedin == true && req.session.tc_id == 1001) {
+    if(req.session.loggedin == true) {
 
     res.render('../views/publicaccess/genreservations', {my_session: req.session});
 
-    // } else {
-    //     res.redirect('/login')
-    // }
+    } else {
+        res.redirect('/login')
+    }
 });
 
 router.post('/dc_allreqs/make_res/res_send' , (req, res) => {
+    if(req.session.loggedin == true) {
+
     var voucher = Date.now().toString().slice(-5);
     let data = {   primaryguest_fname: req.body.f_name, 
                     primaryguest_lname: req.body.l_name, 
@@ -115,7 +125,9 @@ router.post('/dc_allreqs/make_res/res_send' , (req, res) => {
                 res.redirect('/dc_allreqs');
             }
         });
-
+    } else {
+        res.redirect('/login')
+    }
         });
 
 

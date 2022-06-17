@@ -5,14 +5,25 @@ var bcrypt = require('bcrypt');
 
 //renders longin view
 router.get('/register', function(req, res, next) {
+  if(req.session.loggedin == true && req.session.tc_id == 1001) {
     res.render('../views/register', {my_session: req.session});
+  } else {
+      res.redirect('/login')
+  }
+
 });
 
 router.get('/register/new_tc', function(req, res, next) {
+  if(req.session.loggedin == true && req.session.tc_id == 1001) {
   res.render('../views/affiliates_crud/add_affiliate', {my_session: req.session});
+} else {
+  res.redirect('/login')
+}
+
 });
 
 router.post('/register/new_tc_prof' , (req, res) => {
+  if(req.session.loggedin == true && req.session.tc_id == 1001) {
   var voucher = Date.now().toString().slice(-5);
   let data = {    company_id: req.body.c_Id, 
                   company_name: req.body.c_nm,
@@ -28,10 +39,15 @@ router.post('/register/new_tc_prof' , (req, res) => {
           res.redirect('/login');
       }
   });
+} else {
+  res.redirect('/login')
+}
+
 
   });
 
 router.post('/register/new_user' , async(req, res) => {
+  if(req.session.loggedin == true && req.session.tc_id == 1001) {
 var value = req.body.pswrd;
 const salt =  await bcrypt.genSalt(12); // the sync alternative const salt = bcrypt.genSaltSync(12) where no await function is used
 value =  await bcrypt.hash(value, salt) // similarly the sync alternative value = bcrypt.hash(value, salt)
@@ -54,6 +70,10 @@ let data = {    user_id: req.body.u_ID,
        res.redirect('/login');
     }
     });
+  } else {
+      res.redirect('/login')
+  }
+
 }); 
 
 

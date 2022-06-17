@@ -1,18 +1,24 @@
 <div class="navigate">
     <nav>
         <div>
-        <a href="/dc_allreqs">All Bookings</a>
-        <a href="/affiliates_allreqs">All Affliate Tours</a>
+            <a href="/dc_allreqs">All Bookings</a>
+            <% if ( my_session.loggedin == true && my_session.tc_id == 1001 ) { %>
+                <a href="/affiliates_allreqs">All Affliate Tours</a>
+            <% } %>
         </div>
-        <% if ( my_session.loggedin == true && my_session.tc_id == 1001 ) { %>
+
+       
          <div class="left">
+             <% if ( my_session.loggedin == true && my_session.tc_id == 1001 ) { %>
             <a href="/register/new_tc">Register New Affiliate</a>
              <a href="/register">Register New User</a>
+            <% } %>  
+            
+            <% if (my_session.loggedin == true) { %>
+                <a href="/logout">Logout</a>
+            <% } %>   
          </div>
-        <% } %>
+       
 
-        <% if (my_session.loggedin == true) { %>
-            <a href="/logout">Logout</a>
-     <% } %>
     </nav>
 </div>

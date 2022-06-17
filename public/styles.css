@@ -101,31 +101,64 @@
 }
 
 .navigate2 .logoCon .cartcon .bottom select{
-    padding: 5px 0px;
+    padding: 5px 8px;
     width: 250px;
+    background-color: orange;
+    color: #fff;
+    border-radius: 10px;
 }
 
 .navigate2 .linksonHover {
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 100%;
-    height: 80px;
+    height: 70px;
     background-color: teal;
-    padding: 20px;
+    padding: 0px 350px;
 }
 
 .navigate2 .linksonHover select {
     width: 200px;
     padding: 8px 0px;
+    background: transparent;
+    font-size: 16px;
+    color: white;
+    font-weight: 500;
 }
 
 .navigate2 .linksonHover .con {
+    width: 100%;
+    height: 100%;
     display: flex;
-    border: 2px solid orange;
+    /* border: 2px solid orange; */
+    align-items: center;
+    justify-content: center;
+    transition: all ease-in-out 0.8s;
+}
+
+.navigate2 .linksonHover .con p {
+    padding: 0px 30px;
+    font-size: 20px;
+    color: white;
+}
+
+.navigate2 .linksonHover .con a {
+    width: 100%;
+    height: 100%;
+    text-align:  center;
+    padding-top: 20px;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    background: rgb(0, 84, 84);
 }
 
 .navigate2 .linksonHover .con .dropdown {
     display: none;
+    background: white;
+    padding: 10px;
+    font-size: 18px;
 }
 
 .navigate2 .linksonHover .con:hover .dropdown {
@@ -137,6 +170,8 @@
 
 .navigate2 .linksonHover .con:hover .dropdown p {
     padding: 10px 0px;
+    color: black;
+    font-size: 16px;
 }
 
 .navigate2 .smallBanner {
@@ -174,6 +209,7 @@
     color: #fff;
     text-align: center;
     padding: 30px 0px;
+    margin-top: -4px;
 }
 
 .landing .txt h2 {
